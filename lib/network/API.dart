@@ -9,10 +9,10 @@ import 'NetworkRequestResult.dart';
 
 class API {
 
-  static Network _network = Network("http://10.0.2.2:5001/vn-iif/us-central1/");
+  static Network _network = Network("https://us-central1-vn-iif.cloudfunctions.net/");
   // static Network _networkForStream = Network("https://api.instantwebtools.net/v1/");
 
-  static Future<NetworkRequestResult> callAddUser<T>(String name, String comment, {dynamic Function(T data) onSuccess, Function(NetworkRequestError) onError, T Function(String) converter}) =>
+  Future<NetworkRequestResult> callAddUser<T>(String name, String comment, {dynamic Function(T data) onSuccess, Function(NetworkRequestError) onError, T Function(String) converter}) =>
     _call(_addUser(name, comment), onSuccess: onSuccess, onError: onError, converter: converter);
 
   // static Future<NetworkRequestResult> callUpdateUser<T>(String id, String name, String comment, {dynamic Function(T data) onSuccess, Function(NetworkRequestError) onError, T Function(String) converter}) =>

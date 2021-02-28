@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:bots_no_tdd/data/User.dart';
+import 'package:bots_tdd/data/User.dart';
 
 class UserResponse {
 

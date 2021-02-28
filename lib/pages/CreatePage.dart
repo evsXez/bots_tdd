@@ -7,6 +7,10 @@ import 'package:bots_tdd/widgets/Space.dart';
 import 'package:flutter/material.dart';
 
 class CreatePage extends StatefulWidget {
+
+  final API api;
+  CreatePage(this.api);
+
   @override
   _CreatePageState createState() => _CreatePageState();
 }
@@ -58,7 +62,7 @@ class _CreatePageState extends State<CreatePage> {
   void createPressed() {
     String name = nameController.text;
     if (name.isEmpty) name = Strings.anonym;
-    API.callAddUser(name, commentController.text,
+    widget.api.callAddUser(name, commentController.text,
       onSuccess: (_){}, //showMessage,
       onError: (_){}//(e) { Network.showError(context, e); },
     );
