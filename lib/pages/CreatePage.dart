@@ -1,8 +1,8 @@
 // import 'package:bots_no_tdd/network/API.dart';
 // import 'package:bots_no_tdd/network/Network.dart';
 // import 'package:bots_no_tdd/network/response/HelloResponse.dart';
-// import 'package:bots_no_tdd/resources/Strings.dart';
-// import 'package:bots_no_tdd/widgets/Space.dart';
+import 'package:bots_tdd/resources/Strings.dart';
+import 'package:bots_tdd/widgets/Space.dart';
 import 'package:flutter/material.dart';
 
 class CreatePage extends StatefulWidget {
@@ -12,8 +12,8 @@ class CreatePage extends StatefulWidget {
 
 class _CreatePageState extends State<CreatePage> {
 
-  // final nameController = TextEditingController();
-  // final commentController = TextEditingController();
+  final nameController = TextEditingController();
+  final commentController = TextEditingController();
 
   // String hello = "";
 
@@ -33,24 +33,24 @@ class _CreatePageState extends State<CreatePage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // padding: EdgeInsets.all(16),
-      // child: Column(
-      //   children: [
-      //     greetingLabel,
-      //     spacev(8),
-      //     nameField,
-      //     spacev(16),
-      //     commentField,
-      //     spacev(16),
-      //     createButton,
-      //   ],
-      // ),
+      padding: EdgeInsets.all(16),
+      child: Column(
+        children: [
+          // greetingLabel,
+          // spacev(8),
+          nameField,
+          spacev(16),
+          commentField,
+          // spacev(16),
+          // createButton,
+        ],
+      ),
     );
   }
 
   // Widget get greetingLabel => Center(child: Text(hello, style: TextStyle(color: Colors.deepOrange, fontSize: 18)));
-  // Widget get nameField => TextField(controller: nameController, decoration: InputDecoration(hintText: Strings.hint_name),);
-  // Widget get commentField => TextField(controller: commentController, decoration: InputDecoration(hintText: Strings.hint_comment), maxLines: 3,);
+  Widget get nameField => TextField(controller: nameController, decoration: InputDecoration(hintText: Strings.hint_name),);
+  Widget get commentField => TextField(controller: commentController, decoration: InputDecoration(hintText: Strings.hint_comment), maxLines: 3,);
   // Widget get createButton => RaisedButton(onPressed: createPressed, child: Text(Strings.label_create), color: Colors.blue, textColor: Colors.white,);
    
 
