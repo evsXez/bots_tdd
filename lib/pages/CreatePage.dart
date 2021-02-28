@@ -69,10 +69,10 @@ class _CreatePageState extends State<CreatePage> {
   }
 
   void showMessage(data) {
-    // showDialog(context: context, child: AlertDialog(
-    //   content: Text(data),
-    //   actions: [FlatButton(onPressed: () { Navigator.of(context).pop(); }, child: Text(Strings.close))],
-    // ));
+    showDialog(context: context, child: AlertDialog(
+      content: Text(data),
+      actions: [FlatButton(onPressed: () { Navigator.of(context).pop(); }, child: Text(Strings.close))],
+    ));
     clearFields();
   }
   void clearFields() {

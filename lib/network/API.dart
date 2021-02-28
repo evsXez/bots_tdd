@@ -12,7 +12,7 @@ class API {
   static Network _network = Network("https://us-central1-vn-iif.cloudfunctions.net/");
   // static Network _networkForStream = Network("https://api.instantwebtools.net/v1/");
 
-  Future<NetworkRequestResult> callAddUser<T>(String name, String comment, {dynamic Function(T data) onSuccess, Function(NetworkRequestError) onError, T Function(String) converter}) =>
+  Future<NetworkRequestResult> callAddUser(String name, String comment, {dynamic Function(String data) onSuccess, Function(NetworkRequestError) onError, String Function(String) converter}) =>
     _call(_addUser(name, comment), onSuccess: onSuccess, onError: onError, converter: converter);
 
   // static Future<NetworkRequestResult> callUpdateUser<T>(String id, String name, String comment, {dynamic Function(T data) onSuccess, Function(NetworkRequestError) onError, T Function(String) converter}) =>

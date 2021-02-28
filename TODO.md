@@ -4,8 +4,8 @@
 >   - <s>show input fields</s>
 >   - <s>button tap saves the data</s>
 >   - <s>if data is saved successfully - clear fields</s>
->   - **if data is saved successfully - show server message**
->   - if not entered name - use 'Mr. Anonim'
+>   - <s>if data is saved successfully - show server message</s>
+>   - **if not entered name - use 'Mr. Anonim'**
 >   - in case of error - show it to user
 - at least 2 unit tests
 - create simple document with screenshots or short video that demonstrates TDD approach
