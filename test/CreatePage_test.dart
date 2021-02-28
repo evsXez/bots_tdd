@@ -63,14 +63,21 @@ void main() {
     expect(userStorage.last.name, Strings.anonym);
   });
 
+  testWidgets('error -> show message', (WidgetTester tester) async {
+    await prepare(tester, mockAPI: MockAPI(errorMode: true));
+    await tester.tap(button);
+    await tester.pumpAndSettle();
+    expect(find.text(Strings.error_network), findsOneWidget);
+  });
+
 
 }
 
 List<User> userStorage;
 
-Future<void> prepare(WidgetTester tester) async {
+Future<void> prepare(WidgetTester tester, {MockAPI mockAPI}) async {
   widgetsSetUp();
-  return tester.pumpWidget(MaterialApp(home: Scaffold(body: CreatePage(MockAPI()))));
+  return tester.pumpWidget(MaterialApp(home: Scaffold(body: CreatePage(mockAPI ?? MockAPI()))));
 }
 
 void widgetsSetUp() {
@@ -84,10 +91,20 @@ Finder get button => find.widgetWithText(RaisedButton, Strings.label_create);
 
 class MockAPI extends Mock implements API {
 
+  final bool errorMode;
+  
   static String CREATED_MESSAGE = '{"message":"Mock - created."}';
+  static String ERROR_MESSAGE = '{"message":"Mock - error."}';
 
+  MockAPI({this.errorMode = false});
   
   Future<NetworkRequestResult> callAddUser(String name, String comment, {dynamic Function(String data) onSuccess, Function(NetworkRequestError) onError, String Function(String) converter}) {
+    if (errorMode) {
+      final error = NetworkRequestError(404, ERROR_MESSAGE);
+      onError(error);
+      return Future.value(NetworkRequestResult(error: error));
+    }
+
     userStorage.add(User(name, comment));
     onSuccess(CREATED_MESSAGE);
     return Future.value(NetworkRequestResult(success: CREATED_MESSAGE));
