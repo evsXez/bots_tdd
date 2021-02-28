@@ -2,8 +2,8 @@
 
 >- implement POST
 >   - <s>show input fields</s>
->   - **button tap saves the data**
->   - if data is saved successfully - clear fields and hide keyboard
+>   - <s>button tap saves the data</s>
+>   - **if data is saved successfully - clear fields and hide keyboard**
 >   - if data is saved successfully - show server message
 >   - if not entered name - use 'Mr. Anonim'
 >   - in case of error - show it to user

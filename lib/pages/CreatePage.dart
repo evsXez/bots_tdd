@@ -63,25 +63,25 @@ class _CreatePageState extends State<CreatePage> {
     String name = nameController.text;
     if (name.isEmpty) name = Strings.anonym;
     widget.api.callAddUser(name, commentController.text,
-      onSuccess: (_){}, //showMessage,
+      onSuccess: showMessage,
       onError: (_){}//(e) { Network.showError(context, e); },
     );
   }
 
-  // void showMessage(data) {
-  //   showDialog(context: context, child: AlertDialog(
-  //     content: Text(data),
-  //     actions: [FlatButton(onPressed: () { Navigator.of(context).pop(); }, child: Text(Strings.close))],
-  //   ));
-  //   clearFields();
-  // }
-  // void clearFields() {
-  //   setState(() {
-  //     nameController.text = "";
-  //     commentController.text = "";
-  //     FocusScope.of(context).unfocus();
-  //   });
-  // }
+  void showMessage(data) {
+    // showDialog(context: context, child: AlertDialog(
+    //   content: Text(data),
+    //   actions: [FlatButton(onPressed: () { Navigator.of(context).pop(); }, child: Text(Strings.close))],
+    // ));
+    clearFields();
+  }
+  void clearFields() {
+    setState(() {
+      nameController.text = "";
+      commentController.text = "";
+      // FocusScope.of(context).unfocus();
+    });
+  }
 
   // void setHello(String s) {
   //   Strings.hello = s;

@@ -30,7 +30,24 @@ void main() {
 
     expect(userStorage.last.name, userName);
     expect(userStorage.last.comment, userComment);
+  });
 
+  testWidgets('successful save -> clear fields', (WidgetTester tester) async {
+    final userName = "John Dert";
+    final userComment = "no comments...";
+
+    await prepare(tester);
+    expect(button, findsOneWidget);
+    await tester.enterText(name, userName);
+    await tester.enterText(comment, userComment);
+    await tester.tap(button);
+    await tester.pump();
+
+    final nameField = await tester.widget<TextField>(name);
+    final commentField = await tester.widget<TextField>(comment);
+
+    expect(nameField.controller.text, "");
+    expect(commentField.controller.text, "");
   });
 
 
@@ -56,7 +73,9 @@ class MockAPI extends Mock implements API {
   
   Future<NetworkRequestResult> callAddUser<T>(String name, String comment, {dynamic Function(T data) onSuccess, Function(NetworkRequestError) onError, T Function(String) converter}) {
     userStorage.add(User(name, comment));
-    return Future.value(NetworkRequestResult(success: '{"message":"Mock - created."}'));
+    final res = '{"message":"Mock - created."}';
+    onSuccess(null);
+    return Future.value(NetworkRequestResult(success: res));
   }
   
 }
