@@ -19,8 +19,8 @@ class MainPage extends StatelessWidget {
     items: [
       BottomNavigationBarItem(icon: Icon(Icons.add), label: Strings.label_create),
       BottomNavigationBarItem(icon: Icon(Icons.list), label: Strings.label_read),
-      // BottomNavigationBarItem(icon: Icon(Icons.edit), label: Strings.label_update),
-      // BottomNavigationBarItem(icon: Icon(Icons.arrow_circle_down), label: Strings.label_stream),
+      BottomNavigationBarItem(icon: Icon(Icons.edit), label: Strings.label_update),
+      BottomNavigationBarItem(icon: Icon(Icons.arrow_circle_down), label: Strings.label_stream),
     ]
   );
 
