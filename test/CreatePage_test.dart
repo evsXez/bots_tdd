@@ -37,7 +37,6 @@ void main() {
     final userComment = "no comments...";
 
     await prepare(tester);
-    expect(button, findsOneWidget);
     await tester.enterText(name, userName);
     await tester.enterText(comment, userComment);
     await tester.tap(button);
@@ -48,6 +47,13 @@ void main() {
 
     expect(nameField.controller.text, "");
     expect(commentField.controller.text, "");
+  });
+
+  testWidgets('successful save -> show message', (WidgetTester tester) async {
+    await prepare(tester);
+    await tester.tap(button);
+    await tester.pump();
+    expect(find.text(MockAPI.CREATED_MESSAGE), findsOneWidget);
   });
 
 
@@ -70,10 +76,13 @@ Finder get button => find.widgetWithText(RaisedButton, Strings.label_create);
 
 
 class MockAPI extends Mock implements API {
+
+  static String CREATED_MESSAGE = "Mock - created.";
+
   
   Future<NetworkRequestResult> callAddUser<T>(String name, String comment, {dynamic Function(T data) onSuccess, Function(NetworkRequestError) onError, T Function(String) converter}) {
     userStorage.add(User(name, comment));
-    final res = '{"message":"Mock - created."}';
+    final res = '{"message":$CREATED_MESSAGE}';
     onSuccess(null);
     return Future.value(NetworkRequestResult(success: res));
   }
