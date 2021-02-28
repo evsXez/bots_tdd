@@ -67,7 +67,7 @@ void main() {
     await prepare(tester, mockAPI: MockAPI(errorMode: true));
     await tester.tap(button);
     await tester.pumpAndSettle();
-    expect(find.text(Strings.error_network), findsOneWidget);
+    expect(find.text(MockAPI.ERROR_MESSAGE), findsOneWidget);
   });
 
 

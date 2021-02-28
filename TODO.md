@@ -1,12 +1,12 @@
 # //TODO:
 
->- implement POST
+>- <s>implement POST</s>
 >   - <s>show input fields</s>
 >   - <s>button tap saves the data</s>
 >   - <s>if data is saved successfully - clear fields</s>
 >   - <s>if data is saved successfully - show server message</s>
 >   - <s>if not entered name - use 'Mr. Anonim'</s>
->   - **in case of error - show it to user**
+>   - <s>in case of error - show it to user</s>
 - at least 2 unit tests
 - create simple document with screenshots or short video that demonstrates TDD approach
 - create 1 graph that is built using a Stream

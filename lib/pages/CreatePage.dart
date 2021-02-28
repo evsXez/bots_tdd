@@ -2,6 +2,7 @@
 // import 'package:bots_no_tdd/network/Network.dart';
 // import 'package:bots_no_tdd/network/response/HelloResponse.dart';
 import 'package:bots_tdd/network/API.dart';
+import 'package:bots_tdd/network/Network.dart';
 import 'package:bots_tdd/resources/Strings.dart';
 import 'package:bots_tdd/widgets/Space.dart';
 import 'package:flutter/material.dart';
@@ -64,7 +65,7 @@ class _CreatePageState extends State<CreatePage> {
     if (name.isEmpty) name = Strings.anonym;
     widget.api.callAddUser(name, commentController.text,
       onSuccess: showMessage,
-      onError: (_){}//(e) { Network.showError(context, e); },
+      onError: (e) { Network.showError(context, e); },
     );
   }
 
