@@ -25,12 +25,21 @@ void main() {
       expect(find.byType(CreatePage), findsOneWidget);
     });
 
-    testWidgets('tap on second button shows ReadPage', (WidgetTester tester) async {
+    testWidgets('tap on 2nd button shows ReadPage', (WidgetTester tester) async {
       await tester.pumpWidget(MainPage());
 
       await tester.tap(find.byIcon(Icons.list));
       await tester.pump();
       expect(find.byType(ReadPage), findsOneWidget);
+      expect(find.byType(CreatePage), findsNothing);
+    });
+
+    testWidgets('tap on 3rd button shows UpdatePage', (WidgetTester tester) async {
+      await tester.pumpWidget(MainPage());
+
+      await tester.tap(find.byIcon(Icons.edit));
+      await tester.pump();
+      expect(find.byType(UpdatePage), findsOneWidget);
       expect(find.byType(CreatePage), findsNothing);
     });
 
