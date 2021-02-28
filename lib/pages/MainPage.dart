@@ -4,9 +4,8 @@ import 'package:flutter/material.dart';
 
 import 'CreatePage.dart';
 import 'ReadPage.dart';
-// import 'ReadPage.dart';
 // import 'StreamPage.dart';
-// import 'UpdatePage.dart';
+import 'UpdatePage.dart';
 
 
 class MainPage extends StatefulWidget {
@@ -55,7 +54,7 @@ class _MainPageState extends State<MainPage> {
     switch (currentPageIdx) {
       case PAGE_CREATE: return CreatePage();
       case PAGE_READ: return ReadPage(/*onUserUpdateRequest*/);
-      // case PAGE_UPDATE: return UpdatePage(user: userToUpdate, updated: resetUser);
+      case PAGE_UPDATE: return UpdatePage(/*user: userToUpdate, updated: resetUser*/);
       // case PAGE_STREAM: return StreamPage();
     }
     return Container(color: Colors.orange,);

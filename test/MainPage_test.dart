@@ -1,6 +1,7 @@
 import 'package:bots_tdd/pages/CreatePage.dart';
 import 'package:bots_tdd/pages/MainPage.dart';
 import 'package:bots_tdd/pages/ReadPage.dart';
+import 'package:bots_tdd/pages/UpdatePage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
