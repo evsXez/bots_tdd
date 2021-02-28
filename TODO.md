@@ -1,6 +1,6 @@
 # //TODO:
 
-- at least 2 unit tests
+>- at least 2 unit tests
 - create simple document with screenshots or short video that demonstrates TDD approach
 - create 1 graph that is built using a Stream
 - make graphs different (load, interaction)
@@ -13,7 +13,6 @@
 - implement DELETE
 - implement PUT
 - implement GET
-- implement POST
 
 
 ## Bonus:
@@ -24,6 +23,7 @@
 
 
 ## DONE:
+- <s>implement POST</s>
 - <s>implement bottom navigation bar</s>
 - <s>create simple server and simple database</s>
 - <s>read document carefully</s>
