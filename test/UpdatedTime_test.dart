@@ -62,6 +62,25 @@ void main() {
       ), UpdatedTime.hours(23));
     });
 
+    test('days', () {
+      expect(UpdatedTime.name(
+        DateTime.now().subtract(Duration(hours: 24))
+      ), UpdatedTime.days(1));
+      expect(UpdatedTime.name(
+        DateTime.now().subtract(Duration(hours: 47))
+      ), UpdatedTime.days(1));
+      expect(UpdatedTime.name(
+        DateTime.now().subtract(Duration(hours: 48))
+      ), UpdatedTime.days(2));
+      expect(UpdatedTime.name(
+        DateTime.now().subtract(Duration(days: 3))
+      ), UpdatedTime.days(3));
+      expect(UpdatedTime.name(
+        DateTime.now().subtract(Duration(days: 6, hours: 23))
+      ), UpdatedTime.days(6));
+    });
+
+
   });
 
 }
