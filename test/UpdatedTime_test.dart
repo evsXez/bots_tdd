@@ -91,10 +91,10 @@ void main() {
         DateTime.now().subtract(Duration(days: 14))
       ), UpdatedTime.weeks(2));
       expect(UpdatedTime.name(
-        DateTime.now().subtract(Duration(days: 7*5))
-      ), UpdatedTime.weeks(5));
-      final plain = DateTime.now().subtract(Duration(days: 7*5+1));
-      expect(UpdatedTime.name(plain), UpdatedTime.plain(plain));
+        DateTime.now().subtract(Duration(days: 7*4+6, hours: 0))
+      ), UpdatedTime.weeks(4));
+      final dt = DateTime.now().subtract(Duration(days: 7*5));
+      expect(UpdatedTime.name(dt), UpdatedTime.plain(dt));
     });
 
 
