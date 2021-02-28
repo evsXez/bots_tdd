@@ -1,9 +1,5 @@
 # //TODO:
 
->- implement bottom navigation bar
->   - create bottom navigation with one page
->   - add other pages
-
 - at least 2 unit tests
 - create simple document with screenshots or short video that demonstrates TDD approach
 - create 1 graph that is built using a Stream
@@ -28,6 +24,7 @@
 
 
 ## DONE:
+- <s>implement bottom navigation bar</s>
 - <s>create simple server and simple database</s>
 - <s>read document carefully</s>
 
