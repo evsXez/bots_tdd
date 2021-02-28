@@ -12,7 +12,8 @@ class UpdatedTime {
 
     if (diff.compareTo(Duration(minutes: 1)) < 0) return NOW;
     if (diff.compareTo(Duration(hours: 1)) < 0) return minutes(diff.inMinutes);
-    return hours(diff.inHours);
+    if (diff.compareTo(Duration(days: 1)) < 0) return hours(diff.inHours);
+    return days(diff.inDays);
   }
 
   static String minutes(int n) => "$n$N_MINUTES";
