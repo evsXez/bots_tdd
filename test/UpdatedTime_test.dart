@@ -80,6 +80,23 @@ void main() {
       ), UpdatedTime.days(6));
     });
 
+    test('weeks and more', () {
+      expect(UpdatedTime.name(
+        DateTime.now().subtract(Duration(days: 7))
+      ), UpdatedTime.weeks(1));
+      expect(UpdatedTime.name(
+        DateTime.now().subtract(Duration(days: 12))
+      ), UpdatedTime.weeks(1));
+      expect(UpdatedTime.name(
+        DateTime.now().subtract(Duration(days: 14))
+      ), UpdatedTime.weeks(2));
+      expect(UpdatedTime.name(
+        DateTime.now().subtract(Duration(days: 7*5))
+      ), UpdatedTime.weeks(5));
+      final plain = DateTime.now().subtract(Duration(days: 7*5+1));
+      expect(UpdatedTime.name(plain), UpdatedTime.plain(plain));
+    });
+
 
   });
 
