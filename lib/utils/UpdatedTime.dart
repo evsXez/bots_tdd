@@ -11,7 +11,8 @@ class UpdatedTime {
     final diff = now.difference(dt);
 
     if (diff.compareTo(Duration(minutes: 1)) < 0) return NOW;
-    return minutes(diff.inMinutes);
+    if (diff.compareTo(Duration(hours: 1)) < 0) return minutes(diff.inMinutes);
+    return hours(diff.inHours);
   }
 
   static String minutes(int n) => "$n$N_MINUTES";
