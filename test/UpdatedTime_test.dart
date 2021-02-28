@@ -44,6 +44,24 @@ void main() {
       ), UpdatedTime.minutes(59));
     });
 
+    test('hours', () {
+      expect(UpdatedTime.name(
+        DateTime.now().subtract(Duration(minutes: 60))
+      ), UpdatedTime.hours(1));
+      expect(UpdatedTime.name(
+        DateTime.now().subtract(Duration(minutes: 119))
+      ), UpdatedTime.hours(1));
+      expect(UpdatedTime.name(
+        DateTime.now().subtract(Duration(hours: 2))
+      ), UpdatedTime.hours(2));
+      expect(UpdatedTime.name(
+        DateTime.now().subtract(Duration(hours: 12))
+      ), UpdatedTime.hours(12));
+      expect(UpdatedTime.name(
+        DateTime.now().subtract(Duration(hours: 23, minutes: 59))
+      ), UpdatedTime.hours(23));
+    });
+
   });
 
 }
