@@ -3,6 +3,7 @@ import 'package:bots_tdd/resources/Strings.dart';
 import 'package:flutter/material.dart';
 
 import 'CreatePage.dart';
+import 'ReadPage.dart';
 // import 'ReadPage.dart';
 // import 'StreamPage.dart';
 // import 'UpdatePage.dart';
@@ -53,7 +54,7 @@ class _MainPageState extends State<MainPage> {
   Widget get page {
     switch (currentPageIdx) {
       case PAGE_CREATE: return CreatePage();
-      // case PAGE_READ: return ReadPage(onUserUpdateRequest);
+      case PAGE_READ: return ReadPage(/*onUserUpdateRequest*/);
       // case PAGE_UPDATE: return UpdatePage(user: userToUpdate, updated: resetUser);
       // case PAGE_STREAM: return StreamPage();
     }

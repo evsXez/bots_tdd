@@ -1,5 +1,6 @@
 import 'package:bots_tdd/pages/CreatePage.dart';
 import 'package:bots_tdd/pages/MainPage.dart';
+import 'package:bots_tdd/pages/ReadPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -28,6 +29,7 @@ void main() {
       await tester.pumpWidget(MainPage());
 
       await tester.tap(find.byIcon(Icons.list));
+      await tester.pump();
       expect(find.byType(ReadPage), findsOneWidget);
       expect(find.byType(CreatePage), findsNothing);
     });
