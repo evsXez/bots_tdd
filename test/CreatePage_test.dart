@@ -56,6 +56,13 @@ void main() {
     expect(find.text(MockAPI.CREATED_MESSAGE), findsOneWidget);
   });
 
+  testWidgets('no input -> save "Mr. Anonym" ', (WidgetTester tester) async {
+    await prepare(tester);
+    await tester.tap(button);
+    await tester.pump();
+    expect(userStorage.last.name, Strings.anonym);
+  });
+
 
 }
 
